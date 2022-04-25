@@ -21,7 +21,6 @@ async function run() {
 
         //get all product
         app.get('/product', async (req, res) => {
-            // console.log(req.query);
             const page = Number(req.query.page);
             const size = Number(req.query.size);
             const query = {};
@@ -50,8 +49,6 @@ async function run() {
             const cursor = productCollection.find(query);
             const products = await cursor.toArray();
             res.send(products)
-            console.log(keys)
-
         })
 
     }
